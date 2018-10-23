@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Sign Up
+        </title>
+        <link rel="stylesheet" type="text/css" href="../static/signup_style.css">
+    </head>
+
+    <body>
+        <!--Main heading-->
+        <div class="head">
+            <h1>
+                Please fill in the following details
+            </h1>
+        </div>
+
+        <!--Details section-->
+        <div class="detail">
+            <form action="http://127.0.0.1:5000/signup" method="POST">
+
+            mail id : 
+            <input name="mail" type="text">
+            <br><br>
+
+            First : 
+            <input name="fname" type="text">
+            <br><br>
+
+            Last : 
+            <input name="lname" type="text">
+            <br><br>
+
+            Password : 
+            <input name="passwd" type="text">
+            <br><br>
+
+            DOB : 
+            <input name="dob" type="date">
+            <br><br>
+
+            City : 
+            <input name="city" type="text">
+            <br><br>
+
+            Height
+            <input name="height" type="number">
+            <br><br>
+
+            Weight
+            <input name="weight" type="number">
+            <br><br>
+
+            <input type="submit">
+            </form>
+        </div>
+    </body>
+</html>

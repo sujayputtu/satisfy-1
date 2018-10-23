@@ -1,0 +1,65 @@
+/*
+ * CSS for main page
+*/
+
+body {
+    background-image: url('/static/images/athena_nike.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%; 
+}
+
+.mainhead {
+    text-align: center;
+    color: wheat;
+    font-family: 'audrey';
+    font-size: 22px;
+}
+
+.maintask {
+    display: flex;
+}
+
+.create {
+    width: 30%;
+    padding-top: 10%;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 10%;
+    border-right-style: solid;
+    border-right-color: wheat;
+    border-right-width: 1.5px;
+}
+
+.startsession {
+    width: 30%;     
+    padding-top: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.textbox {
+    padding: 10%;
+}
+
+.signupbutton {
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-right: 20%;
+    padding-left: 50%;
+}
+
+.loginbutton {
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 30%;
+}
+
+.quote 
+{
+    color: purple;
+    font-family: 'Trebuchet MS';
+    font-size: 14px;
+    padding-top: 5%;
+    padding-left: 5%;
+    text-align: center;
+}
