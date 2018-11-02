@@ -14,29 +14,49 @@ class insert_val(object):
         )
         self.cur = self.sat.cursor()
 
+    def get_uid(self):
+        """Generate uid for new users."""
+        with open("uid.txt", "r+") as uid_file:
+            uid = int(uid_file.read())
+            uid += 1
+            uid_file.write(uid)
+            
+        return uid
+
     def calculate_age(self, born):
         """To calculate age from date of birth."""
         today = datetime.date.today()
         return today.year - born.year - ((today.month, today.day) < (born.month, born.day))
 
+    def insert_user_mail (self, uid, mail):
+        """Insert values into user_mail table."""
+        sql = 'insert into user_mail (uid, mail) values (%s, %s)'
+        val = (uid, mail)
+
+        self.cur.execute(sql, val)
+
+    def insert_user_age (self, uid, age):
+        """Insert value into user_age table."""
+        sql = 'insert into user_age (uid, age) values (%s, %s)'
+        val = (uid, age)
+
+        self.cur.execute(sql, val)
+
     # This function is yet to be completed.
     def insert_user(self, *args):
         """Insert values into user table."""
-        mail = args[0]
-        fname = args[1]
-        lname = args[2]
-        passwd = args[3]
-        dob = args[4]
-        city = args[5]
-        height = args[6]
-        weight  = args[7]
-        uid = 1
-        age = 12
+        uid = self.get_uid()
 
-        sql = 'insert into user (uid, mail, Fname, Lname, passwd, dob, city, age, height, weight) values (%d, %s, %s, %s, %s, %s, %s, %d, %d, %d)'
-        val = (uid, mail, fname, lname, passwd, dob, city, age, height, weight)
+        sql = 'insert into user (uid, fname, lname, passwd, dob, city, height, weight, tot_dist, tot_time) values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+        val = (uid, args[1], args[2], args[3], args[4], args[5], args[6], args[7], 0.0, 0.0)
 
         self.cur.execute(sql, val)
+
+        self.insert_user_mail(uid, args[0])
+        
+        age = self.calculate_age(args[4])
+        self.insert_user_age(uid, age)
+
         self.sat.commit()
 
     def insert_friend(self, *args):
