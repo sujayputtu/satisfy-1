@@ -23,7 +23,7 @@ cur = satisfy.cursor()
     tot_time : float | not null
 """
 
-cur.execute('create table user (uid int not null primary key, fname varchar(25) not null, lname varchar(25) not null, passwd varchar(25) not null, dob date not null, city varchar(25) not null, height int not null, weight int not null, tot_dist float not null, tot_time float not null)')
+cur.execute('create table user (uid int not null primary key auto_increment, fname varchar(25) not null, lname varchar(25) not null, passwd varchar(25) not null, dob date not null, city varchar(25) not null, height int not null, weight int not null, tot_dist float not null, tot_time float not null)')
 
 # Creating 'friends_of' table
 """
