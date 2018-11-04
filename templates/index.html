@@ -3,9 +3,9 @@
 <html>
     <head>
         <title>
-            Satisfy
+            Login Page
         </title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main_style.css') }}">
+        <link rel="stylesheet" type="text/css" href="../static/main_style.css">
     </head>
 
     <body>
@@ -13,48 +13,56 @@
             <!-- The Heading of the main page -->
             <div class="mainhead">
                 <h1>
-                    Satisfy Yourself
+                    Satisfy
                 </h1>
             </div>
 
-            <!-- The user login part -->
             <div class="maintask">
-
-                <!-- The sign up option -->
-                <div class="create">
-                    <div class="signupbutton">    
-                        <a href="{{ url_for('signup_page') }}">
-                            <button title="Create free account">
-                                Sign up
-                            </button>
-                        </a>
-                    </div>    
-                </div>
-
-                <!-- The Login part -->
-                <div class="startsession">
-                    <div class="loginbutton">
-                        <a href="main.html" title="Log in">
-                            <button>
-                                Log In
-                            </button>
-                        </a>
+               
+                <!-- sign up part-->
+                    <div class="create">
+                            <div class="signupbutton">    
+                
+                                <a href="signup.html">
+                                    <button class="button"><span>Sign-up</span></button>
+                                </a>
+                            </div>    
                     </div>
-
-                    <div class="loginbutton">
-                        User Name
+                
+                <!--login part-->
+                <form action="/action_page.php">
+                    <div class="startsession">
+                        <h1>Login</h1>
+                        <hr>
+                        <div class="create1">
+                            <label for="email"><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" required>
+                        
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+                        </div>
+                        <hr>
+                       
+                            <div class="regbutton">    
+                
+                                <a href="signup.html">
+                                    <button class="button">
+                                        <span>
+                                            Submit
+                                        </span>
+                                    </button>
+                                </a>
+                            </div>   
                     </div>
-
-                    <div class="loginbutton">
-                        Password
-                    </div>
-                </div>
+                </form>
             </div>
+            
+            <!--quote-->
             <div class="quote">
-                <q>
-                        Every runner knows this. You run and run, mile after mile, and you never quite know why. You tell yourself that you are running toward some goal, chasing some rush, but really you run because the alternative, stopping, scares you to death
-                </q>
-                -<i>Shoe Dog</i>, Phil Knight
+                <h2>
+                    “Every runner knows this. You run and run, mile after mile, and you never quit know why. You tell yourself that you’re running toward some goal, chasing some rush, but really you run because the alternative, stopping, scares you to death”
+- Shoe Dog, Phil Knight
+                </h2>
             </div>
         </div>
     </body>

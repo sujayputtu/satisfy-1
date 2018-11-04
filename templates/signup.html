@@ -5,55 +5,111 @@
         <title>
             Sign Up
         </title>
+
         <link rel="stylesheet" type="text/css" href="../static/signup_style.css">
     </head>
 
     <body>
+
         <!--Main heading-->
         <div class="head">
             <h1>
-                Please fill in the following details
+                Sign Up 
             </h1>
         </div>
 
         <!--Details section-->
         <div class="detail">
             <form action="http://127.0.0.1:5000/signup" method="POST">
+                <!--Name-->
+                    <!--First name-->
+                    <div class="first">
+                       First name<input type="text" placeholder="Enter First name" name="firstname" value="">
+                    </div>
 
-            mail id : 
-            <input name="mail" type="text">
-            <br><br>
+                    <!--Last name-->
+                    <div class="last">
+                        Last name<input type="text" placeholder="Enter Last name" name="lastname" value="">
+                    </div>
+           
+                    <!--Username and password-->
+                    <div class="unique">
+                        
+                        <!--Username-->
+                        <div class="unique_val">
+                            Email<input type="text" placeholder="Enter Email" name="username" value="">
+                        </div>
 
-            First : 
-            <input name="fname" type="text">
-            <br><br>
+                        <!--Password-->
+                        <div class="unique_val">
+                            Password <input type="password" placeholder="Enter Password"name="password" value="">
+                        </div>
+                        
+                        <!--Repeat Password-->
+                        <div class="unique_val1">
+                            Repeat Password <input type="password" placeholder="Repeat Password"name="password" value="">
+                        </div>
+                    </div>
 
-            Last : 
-            <input name="lname" type="text">
-            <br><br>
+                    <!--Details and rules-->
+                    <div class="pr">
+                        
+                        <!--Personal details-->
+                        <div class="personal">
+                            
+                            <!--Age and Gender-->
+                            <div class="ag">
+                                
+                                <!--Age-->
+                                <div class="age">
+                                Age <input type="number" placeholder="Enter Age" name="age" value="Age">
+                                </div>
 
-            Password : 
-            <input name="passwd" type="text">
-            <br><br>
+                                <!--Gender-->
+                                <div class="gen">
+                                <p> Gender </p>
+                                    <input type="radio" name="gender" value="Male"> Male<br>
+                                    <input type="radio" name="gender" value="Female"> Female<br>
+                                    <input type="radio" name="gender" value="Other"> Other
+                                </div>
+                            </div>
 
-            DOB : 
-            <input name="dob" type="date">
-            <br><br>
+                            <!--Height and Weight-->
+                            <div class="stat">
+                                
+                                <!--Height-->
+                                <div class="h">
+                                    Height <input type="number" placeholder="Enter Height" name="height" value="173cm">
+                                </div>
 
-            City : 
-            <input name="city" type="text">
-            <br><br>
+                                <!--Weight-->
+                                <div class="w">
+                                    Weight <input type="number" placeholder="Enter Weight"name="weight" value="70kg">
+                                </div>
+                            
 
-            Height
-            <input name="height" type="number">
-            <br><br>
-
-            Weight
-            <input name="weight" type="number">
-            <br><br>
-
-            <input type="submit">
+                                <!--City-->
+                                <div class="city">
+                                    City <input type="text" placeholder="Enter City" name="city" value="">
+                                </div>
+                            </div>
+                            
+                            <!--Submit-->
+                            <div class="subbutton">
+                                
+                                <!--<input type="submit" name="submit" value="Start satisfy">-->
+                                <a href="xyz.html">
+                                        <button class="button">
+                                            <span>
+                                                Submit
+                                            </span>
+                                        </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
             </form>
         </div>
     </body>
 </html>
+

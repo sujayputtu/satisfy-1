@@ -35,8 +35,7 @@ def signup_page():
     if mail == None:
         return render_template('/signup.html')
     else:
-        # render template for the home page
-        return "success"
+        return render_template('/home.html')
 
 if __name__ == '__main__':
     app.debug = True
