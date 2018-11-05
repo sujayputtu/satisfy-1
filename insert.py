@@ -52,7 +52,7 @@ class insert_val(object):
 
         dob = datetime.datetime.strptime(args[4], "%Y-%m-%d")
         age = self.calculate_age(dob)
-        self.insert_user_age(uid, age)
+        self.insert_user_age(uid[0], age)
 
         self.sat.commit()
 

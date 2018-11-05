@@ -4,15 +4,27 @@ This script will be run on the server. This script keeps the sight alive.
 
 from flask import Flask, redirect, url_for, render_template, request
 import insert
+import check_credentials
 
 app = Flask(__name__)
 
 db = insert.insert_val()
+check = check_credentials.credentials()
 
-@app.route('/')
+@app.route('/', methods=['POST', 'GET'])
 def main_page():
     """This function will load the main page of the website."""
-    return render_template('/index.html')
+    clear = False
+    if request.method == 'POST':
+        mail = request.form['mail']
+        passwd = request.form['passwd']
+
+        clear = check.login(mail, passwd)
+
+    if not clear:
+        return render_template('/index.html')
+    else:
+        return render_template('/home.html')
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup_page():
@@ -25,6 +37,7 @@ def signup_page():
         fname = request.form['fname']
         lname = request.form['lname']
         passwd = request.form['passwd']
+        rpasswd = request.form['rpasswd']
         dob = request.form['dob']
         city = request.form['city']
         height = request.form['height']
@@ -34,8 +47,14 @@ def signup_page():
 
     if mail == None:
         return render_template('/signup.html')
+    elif not rpasswd == passwd:
+        return render_template('/signup.html')
     else:
         return render_template('/home.html')
+
+@app.route('/home')
+def homepage():
+    return render_template('/home.html')
 
 if __name__ == '__main__':
     app.debug = True

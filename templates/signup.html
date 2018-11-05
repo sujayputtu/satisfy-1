@@ -6,7 +6,7 @@
             Sign Up
         </title>
 
-        <link rel="stylesheet" type="text/css" href="../static/signup_style.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'signup_style.css') }}">
     </head>
 
     <body>
@@ -24,12 +24,12 @@
                 <!--Name-->
                     <!--First name-->
                     <div class="first">
-                       First name<input type="text" placeholder="Enter First name" name="firstname" value="">
+                       First name<input type="text" placeholder="Enter First name" name="fname" value="">
                     </div>
 
                     <!--Last name-->
                     <div class="last">
-                        Last name<input type="text" placeholder="Enter Last name" name="lastname" value="">
+                        Last name<input type="text" placeholder="Enter Last name" name="lname" value="">
                     </div>
            
                     <!--Username and password-->
@@ -37,17 +37,17 @@
                         
                         <!--Username-->
                         <div class="unique_val">
-                            Email<input type="text" placeholder="Enter Email" name="username" value="">
+                            Email<input type="text" placeholder="Enter Email" name="mail" value="">
                         </div>
 
                         <!--Password-->
                         <div class="unique_val">
-                            Password <input type="password" placeholder="Enter Password"name="password" value="">
+                            Password <input type="password" placeholder="Enter Password"name="passwd" value="">
                         </div>
                         
                         <!--Repeat Password-->
                         <div class="unique_val1">
-                            Repeat Password <input type="password" placeholder="Repeat Password"name="password" value="">
+                            Repeat Password <input type="password" placeholder="Repeat Password"name="rpasswd" value="">
                         </div>
                     </div>
 
@@ -62,7 +62,7 @@
                                 
                                 <!--Age-->
                                 <div class="age">
-                                Age <input type="number" placeholder="Enter Age" name="age" value="Age">
+                                DOB <input type="date" name="dob" value="Age">
                                 </div>
 
                                 <!--Gender-->
@@ -98,10 +98,10 @@
                             <div class="subbutton">
                                 
                                 <!--<input type="submit" name="submit" value="Start satisfy">-->
-                                <a href="xyz.html">
+                                <a href="{{url_for('homepage')}}">
                                         <button class="button">
                                             <span>
-                                                Submit
+                                                <input type="submit">
                                             </span>
                                         </button>
                                 </a>

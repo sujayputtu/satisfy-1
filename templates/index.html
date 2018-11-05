@@ -5,7 +5,7 @@
         <title>
             Login Page
         </title>
-        <link rel="stylesheet" type="text/css" href="../static/main_style.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'main_style.css') }}">
     </head>
 
     <body>
@@ -23,32 +23,32 @@
                     <div class="create">
                             <div class="signupbutton">    
                 
-                                <a href="signup.html">
+                                <a href="{{ url_for('signup_page') }}">
                                     <button class="button"><span>Sign-up</span></button>
                                 </a>
                             </div>    
                     </div>
                 
                 <!--login part-->
-                <form action="/action_page.php">
+                <form action="https://127.0.0.1:5000/" method="POST" enctype="multipart/form-data">
                     <div class="startsession">
                         <h1>Login</h1>
                         <hr>
                         <div class="create1">
                             <label for="email"><b>Email</b></label>
-                            <input type="text" placeholder="Enter Email" name="email" required>
+                            <input type="text" placeholder="Enter Email" name="mail" required>
                         
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <input type="password" placeholder="Enter Password" name="passwd" required>
                         </div>
                         <hr>
                        
                             <div class="regbutton">    
                 
-                                <a href="signup.html">
+                                <a href="{{ url_for('signup_page') }}">
                                     <button class="button">
                                         <span>
-                                            Submit
+                                            <input type="submit">
                                         </span>
                                     </button>
                                 </a>
