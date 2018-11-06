@@ -14,9 +14,8 @@ class credentials(object):
         self.cur.execute('select uid from user_mail where mail = %s', mail)
 
         uid_t = self.cur.fetchone()
-        uid = uid_t[0]
 
-        self.cur.execute('select passwd from user where uid = %s', uid)
+        self.cur.execute('select passwd from user where uid = %s', uid_t)
 
         obtain_t = self.cur.fetchone()
         obtain = obtain_t[0]

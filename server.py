@@ -2,11 +2,12 @@
 This script will be run on the server. This script keeps the sight alive.
 """
 
-from flask import Flask, redirect, url_for, render_template, request
+from flask import Flask, redirect, url_for, render_template, request, session
 import insert
 import check_credentials
 
 app = Flask(__name__)
+app.secret_key = "we are the best"
 
 db = insert.insert_val()
 check = check_credentials.credentials()
@@ -19,7 +20,11 @@ def main_page():
         mail = request.form['mail']
         passwd = request.form['passwd']
 
-        clear = check.login(mail, passwd)
+        mailid = (mail, )
+        clear = check.login(mailid, passwd)
+
+        if clear:
+            session['username'] = mail
 
     if not clear:
         return render_template('/index.html')
@@ -58,4 +63,4 @@ def homepage():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run()
+    app.run(ssl_context = 'adhoc')
