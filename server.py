@@ -1,5 +1,5 @@
 """
-This script will be run on the server. This script keeps the sight alive.
+This script will be run on the server. This script keeps the site alive.
 """
 
 from flask import Flask, redirect, url_for, render_template, request, session
@@ -33,6 +33,7 @@ def main_page():
 
 @app.route('/signup', methods=['POST', 'GET'])
 def signup_page():
+    
     """This function will be executed when the sign-up option is selected.
     'mail id' is considered to be mandatory. If the mail id is given, then it will redirect to home page else the page reloads.
     """

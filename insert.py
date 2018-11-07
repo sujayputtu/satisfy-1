@@ -8,8 +8,8 @@ class insert_val(object):
         """Function that connects to the database."""
         self.sat = con.connect(
             host = "localhost",
-            user = "vadi",
-            passwd = "Vadi@1998",
+            user = "root",
+            passwd = "laferrar1",
             database = "satisfy"
         )
         self.cur = self.sat.cursor()
@@ -37,7 +37,7 @@ class insert_val(object):
 
         return
 
-    # This function is yet to be completed.
+    """ This function is yet to be completed. """
     def insert_user(self, *args):
         """Insert values into user table."""
         sql = 'insert into user(fname, lname, passwd, dob, city, height, weight, tot_dist, tot_time) values (%s, %s, %s, %s, %s, %s, %s, %s, %s)'
