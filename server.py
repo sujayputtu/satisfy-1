@@ -1,6 +1,4 @@
-"""
-This script will be run on the server. This script keeps the site alive.
-"""
+""" This script will run on the server and will keep the site alive. """
 
 from flask import Flask, redirect, url_for, render_template, request, session
 import insert
